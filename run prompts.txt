@@ -1,0 +1,11 @@
+run: python -m venv djangoenv
+
+run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+djangoenv\Scripts\activate
+
+after you install django (pip install django)
+run: python -m django --version
+
+run: django-admin startproject project_name
+
