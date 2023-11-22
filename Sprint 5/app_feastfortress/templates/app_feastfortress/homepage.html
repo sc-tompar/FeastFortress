@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feast Fortress</title>
+    <link rel="icon" type="image/png" href="https://scontent.fceb6-1.fna.fbcdn.net/v/t1.15752-9/380729155_1270825726950679_7142729986261685007_n.png?_nc_cat=101&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGeSvdkbuppx-XKn1Gxt4q4pBG0Q3hfI-WkEbRDeF8j5TInyRvAh2AtvkL-f24jCmBsHSgQzRI0CbcHEfPXK4dX&_nc_ohc=rXo2k3VFlrwAX-5zcRx&_nc_ht=scontent.fceb6-1.fna&oh=03_AdSoBZuHjTUcD8Jlfyv6AQumucn8aQFPcNkHx2dZUJ6u_g&oe=65681FA4">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #d8ceca;
+        }
+ 
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+ 
+        header a.logo {
+            font-size: 24px;
+            text-decoration: none;
+            color: #f3763c;
+            padding-top: 6px;
+        }
+ 
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+ 
+        nav a:hover {
+            background-color: #f3763c;
+        }
+ 
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+ 
+        .name {
+            color: #fff;
+            font-size: 12px;
+        }
+ 
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: url('https://scontent.fceb6-1.fna.fbcdn.net/v/t1.15752-9/380706663_834849791357609_2163193960150311294_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeHx-J3WzA0cPCg5MuoSDcHy4Ff0LbOF6WHgV_Qts4XpYUl8c7oEDLp66ZqSyF_syIz7AxjADaFrHfppJLpqUAsf&_nc_ohc=WIBwqjIo5lYAX90AJ-b&_nc_ht=scontent.fceb6-1.fna&oh=03_AdSIDZ42APmnN1tM-BYwKeNwVSrGtfwEbogqVea8Hk4BaA&oe=6565B66B') no-repeat center/cover;
+            cursor: pointer;
+        }
+ 
+        .hero {
+            background: url('https://zahramediagroup.com/wp-content/uploads/2021/09/Blog-september.jpg') no-repeat center/cover;
+            height: 855px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+        }
+ 
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+ 
+        .hero p {
+            font-size: 24px;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+ 
+        .hero a {
+            text-decoration: none;
+            padding: 15px 30px;
+            background-color: #f3763c;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+ 
+        .hero a:hover {
+            background-color: #f45a2f;
+        }
+ 
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+           
+        }
+ 
+        .phone-section {
+            flex: 2;
+            padding-right: 20px;
+        }
+ 
+        .phone-section img {
+            max-width: 100%;
+            height: auto;
+        }
+ 
+        .info-section {
+            flex: 2;
+            width: 1%;
+            height: 1%;
+ 
+        }
+ 
+        .info-section h1, .info-section h2, .contact-section h3 {
+            color: #f3763c;    
+        }
+ 
+        .info-section p {
+            color: #1d1b1a;
+            line-height: 1.6;
+            text-align: justify;
+        }
+ 
+        .info-section button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+ 
+        .contact-section {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin-top: 10px;
+            border-top: 1px solid #f3763c;
+        }
+ 
+        .contact-section > div {
+            flex: 1;
+            padding: 0 10px;
+            background-color: #f3763c;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+ 
+        .contact-section h3, .contact-section p {
+            color: #fff;
+        }
+        .contact-form {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            min-height: 400px; /* Adjust this value as needed */
+            margin-left: -115%;
+            margin-top: 10%;
+        }
+ 
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+ 
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 95%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+ 
+        .contact-form button {
+            background-color: #f3763c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+ 
+        .contact-form button:hover {
+            background-color: #f45a2f;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        .forum-section {
+        margin: 20px auto; /* Center horizontally, remove negative margins */
+        padding: 5px;
+        background-color: #1c1a1a;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        color: #f45a2f;
+        display: flex;
+        flex-direction: column; /* Keep the content vertically aligned */
+        align-items: center; /* Center content horizontally */
+        min-height: 150px; /* Adjust as needed */
+        width: 300%; /* Set a max width */
+        max-width: 800px; /* Maximum width of the form */
+        margin-left: -415px;
+        margin-top: 60px;
+        }
+        .forum-section form {
+            width: 100%; /* Full width */
+            display: flex; /* Use flexbox for alignment */
+            flex-direction: column; /* Stack form items vertically */
+            align-items: center; /* Center form items horizontally */
+        }  
+    
+        .forum-section h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+    
+        .forum-post {
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: 95%; /* Make each forum post take up the full width */
+            background-color: #d8ceca;
+        }
+    
+        .forum-section form input[type="text"],
+        .forum-section form textarea,
+        .forum-section form button {
+        width: 90%; /* Full width minus some padding */
+        margin: 10px 0; /* Space out elements */
+        padding: 10px; /* Padding for elements */
+        border-radius: 4px;
+        }
+    
+        .forum-post:last-child {
+            border-bottom: none;
+        }
+    
+        .forum-post p {
+            margin: 5px 0;
+        }
+    
+        .forum-post strong {
+            color: #333;
+        }
+    
+        .forum-post span {
+            float: right;
+            font-size: 0.8em;
+            color: #666;
+        }
+    
+        .forum-posts textarea {
+            width: 100%; /* Make the text area take up the full width */
+            height: 100px; /* Set the fixed height of the text area */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none; /* Disable text area resizing */
+        }
+    
+        .forum-posts button {
+            background-color: rgb(244, 47, 47);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            justify-content: right;
+        }
+    
+        .forum-posts button:hover {
+            background-color:  rgb(244, 47, 47);
+        }
+    
+        .forum-section form button {
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        width: 652px;
+        }
+        .label {
+            font-size: x-large;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+            color: #f45a2f; /* You can adjust the color if needed */
+        }
+        footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Feast Fortress</a>
+        <nav>
+            <a href="/home/">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#forum">Forum</a>
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        </nav>
+        <div class="profile-section">
+            <div class="name">{{ user.username }}</div>
+            <a href="/profile/" class="profile-icon"></a>
+        </div>
+    </header>
+<section class="hero">
+    <h1>Welcome to Feast Fortress</h1>
+    <p>Delve into a gastronomic journey and explore our diverse culinary delights.</p>
+    <a href="#about">Learn More</a>
+</section>
+ 
+<div class="container" id="about">
+    <div class="phone-section">
+        <img src="https://images.squarespace-cdn.com/content/v1/53a05cdee4b0c1bc44841a7b/1530298900873-3QT1EJ4FVFN3QEE1CSO4/101+Food+Photography+Tips+and+Tricks" alt="Phone Displaying App"  />
+    </div>
+    <div class="info-section">
+        <img src="http://www.kenwil.co.uk/images/title-about-2.png" alt="Phone Displaying App" width="150" height="45"  />        <h2>Feast Fortress</h2>
+        <p>
+            Feast Fortress stands as the ultimate culinary gateway, illuminating the vast tapestry of global cuisines. With each click, embark on a gastronomic journey,
+            unveiling dishes that tantalize the senses and stories that capture the essence of every culture.
+            Crafted for the curious palate, our platform is a harmonious blend of tradition and innovation, serving up a feast for both the eyes and the soul.
+            Dive into a symphony of flavors, textures, and aromas. From the timeless classics to the modern twists, Feast Fortress is the canvas where every meal becomes a masterpiece.
+        </p>
+        <button onclick="scrollToContact()">CONTACT US</button>
+        <script>
+            function scrollToContact() {
+                const contactSection = document.querySelector('.contact-form');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>    
+        <div class="forum-section" id="forum">
+            <h1>Forum</h1>
+            {% if user.is_authenticated %}
+                <form action="{% url 'forum_page' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="Post Title" required> 
+                    <textarea name="content" placeholder="Write something..." required></textarea>
+                    <button type="submit" style="background-color: rgb(46, 46, 207); color: #fff;">Add Post</button>
+                </form>
+            {% else %}
+                <p>Please <a href="/login/">login</a> to participate in the forum.</p>
+            {% endif %}
+           
+            <div class="forum-posts">
+                {% for post in forum_posts %}
+                    <div class="forum-post">
+                        <h4>{{ post.title }}</h4> 
+                        <p><strong>{{ post.user.username }}</strong> <span>{{ post.timestamp }}</span></p>
+                        <p>{{ post.content }}</p> 
+                        {% if post.user == user %}
+                    <form action="{% url 'delete_post' post.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                {% endif %}
+                    </div>
+                {% empty %}
+                {% endfor %}
+            </div>
+        </div>      
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form action="{% url 'submit_contact' %}" method="post" action="./submitContact">
+                    {% csrf_token %}
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                   
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                   
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                   
+                    <button type="submit">Submit</button>
+                </form>                
+            </div>        
+        </div>
+    </div>
+    <div class="contact-section">
+        <div>
+            <h3>CALL US</h3>
+            <p>09123456789</p>
+            <p>123-4567-890</p>
+        </div>
+        <div>
+            <h3>LOCATION</h3>
+            <p>Cebu Institute Technology University - IT Team</p>
+        </div>
+        <div>
+            <h3>HOURS</h3>
+            <p>Mon – Fri: 9 am – 6 pm</p>
+            <p>Sat: 10 am – 4 pm</p>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>© 2023 Feast Fortress. All rights reserved.</p>
+    <p>Follow us on <a href="#" style="color: #f3763c;">Social Media</a></p>
+</footer>
+</body>
+</html>
