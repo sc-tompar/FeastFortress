@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Feast Fortress</a>
+            <nav>
+                <a href="/home/">Home</a>
+                <a href="/team/">Meet the Team</a>
+                <a href="#forum">Forum</a>
+                <a href="/login/">Login</a>
+                <a href="/register/">Register</a>
+            </nav>
+            <div class="profile-section">
+                <div class="email">{{ user.username }}</div>
+                <a href="/profile/" class="profile-icon"></a> 
+            </div>
+        </div>
+    </header> 
+    <div class="main-box">
+        <div class="content">
+            <div class="image-box">
+                <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" alt="Profile Image">
+            </div>
+            <div class="about">
+                <div class="details">
+                    {% if user.is_authenticated %}
+                        <div class="name">{{ user.username }}</div>
+                        <div class="job">User</div>
+                        <div class="customization-section">
+                            <h3>Customize Your Profile</h3>
+                            <form method="post">
+                                {% csrf_token %}
+                                <label for="favorite-food">Favorite Food:</label>
+                                <select id="favorite-food" name="favorite_food">
+                                    <option value="Adobo" {% if user_profile.favorite_food == "Adobo" %}selected{% endif %}>Adobo</option>
+                                    <option value="Sinigang" {% if user_profile.favorite_food == "Sinigang" %}selected{% endif %}>Sinigang</option>
+                                    <option value="Lechon" {% if user_profile.favorite_food == "Lechon" %}selected{% endif %}>Lechon</option>
+                                    <option value="Kare-Kare" {% if user_profile.favorite_food == "Kare-Kare" %}selected{% endif %}>Kare-Kare</option>
+                                    <option value="Halo-Halo" {% if user_profile.favorite_food == "Halo-Halo" %}selected{% endif %}>Halo-Halo</option>
+                                </select>
+                        
+                                <label for="favorite-restaurant">Favorite Restaurant:</label>
+                                <select id="favorite-restaurant" name="favorite_restaurant">
+                                    <option value="Jollibee" {% if user_profile.favorite_restaurant == "Jollibee" %}selected{% endif %}>Jollibee</option>
+                                    <option value="Mang Inasal" {% if user_profile.favorite_restaurant == "Mang Inasal" %}selected{% endif %}>Mang Inasal</option>
+                                    <option value="Max's Restaurant" {% if user_profile.favorite_restaurant == "Max's Restaurant" %}selected{% endif %}>Max's Restaurant</option>
+                                    <option value="Barrio Fiesta" {% if user_profile.favorite_restaurant == "Barrio Fiesta" %}selected{% endif %}>Barrio Fiesta</option>
+                                    <option value="Gerry's Grill" {% if user_profile.favorite_restaurant == "Gerry's Grill" %}selected{% endif %}>Gerry's Grill</option>
+                                </select>
+                        
+                                <button type="submit">Save Preferences</button>
+                            </form>
+                        </div>                        
+                        <form action="{% url 'logout_view' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="logout">LOGOUT</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'login_page' %}" style="text-decoration: none; color: inherit;">
+                            <div class="login">LOGIN</div>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>            
+        </div>    
+    </div>
+</body>
+</html>

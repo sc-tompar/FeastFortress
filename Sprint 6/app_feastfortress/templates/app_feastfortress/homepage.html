@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feast Fortress</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Feast Fortress</a>
+        <nav>
+            <a href="/home/">Home</a>
+            <a href="/team/">Meet Our Team</a>
+            <a href="#forum">Forum</a>
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        </nav>
+        <div class="profile-section">
+            <div class="name">{{ user.username }}</div>
+            <a href="/profile/" class="profile-icon"></a>
+        </div>
+    </header>
+<section class="hero">
+    <h1>Welcome to Feast Fortress</h1>
+    <p>Delve into a gastronomic journey and explore our diverse culinary delights.</p>
+    <a href="#about">Learn More</a>
+</section>
+ 
+<div class="container" id="about">
+    <div class="phone-section">
+        <img src="https://images.squarespace-cdn.com/content/v1/53a05cdee4b0c1bc44841a7b/1530298900873-3QT1EJ4FVFN3QEE1CSO4/101+Food+Photography+Tips+and+Tricks" alt="Phone Displaying App"  />
+    </div>
+    <div class="info-section">
+        <img src="http://www.kenwil.co.uk/images/title-about-2.png" alt="Phone Displaying App" width="150" height="45"  />        <h2>Feast Fortress</h2>
+        <p>
+            Feast Fortress stands as the ultimate culinary gateway, illuminating the vast tapestry of global cuisines. With each click, embark on a gastronomic journey,
+            unveiling dishes that tantalize the senses and stories that capture the essence of every culture.
+            Crafted for the curious palate, our platform is a harmonious blend of tradition and innovation, serving up a feast for both the eyes and the soul.
+            Dive into a symphony of flavors, textures, and aromas. From the timeless classics to the modern twists, Feast Fortress is the canvas where every meal becomes a masterpiece.
+        </p>
+        <button onclick="scrollToContact()">CONTACT US</button>
+        <script>
+            function scrollToContact() {
+                const contactSection = document.querySelector('.contact-form');
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>    
+        <div class="forum-section" id="forum">
+            <h1>Forum</h1>
+            {% if user.is_authenticated %}
+                <form action="{% url 'forum_page' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="Post Title" required> 
+                    <textarea name="content" placeholder="Write something..." required></textarea>
+                    <button type="submit" style="background-color: rgb(46, 46, 207); color: #fff;">Add Post</button>
+                </form>
+            {% else %}
+                <p>Please <a href="/login/">login</a> to participate in the forum.</p>
+            {% endif %}
+           
+            <div class="forum-posts">
+                {% for post in forum_posts %}
+                    <div class="forum-post">
+                        <h4>{{ post.title }}</h4> 
+                        <p><strong>{{ post.user.username }}</strong> <span>{{ post.timestamp }}</span></p>
+                        <p>{{ post.content }}</p> 
+                        {% if post.user == user %}
+                    <form action="{% url 'delete_post' post.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                {% endif %}
+                    </div>
+                {% empty %}
+                {% endfor %}
+            </div>
+        </div>      
+        <div class="contact-form-container">
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form action="{% url 'submit_contact' %}" method="post" action="./submitContact">
+                    {% csrf_token %}
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                   
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                   
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                   
+                    <button type="submit">Submit</button>
+                </form>                
+            </div>        
+        </div>
+    </div>
+    <div class="contact-section">
+        <div>
+            <h3>CALL US</h3>
+            <p>09123456789</p>
+            <p>123-4567-890</p>
+        </div>
+        <div>
+            <h3>LOCATION</h3>
+            <p>Cebu Institute Technology University - IT Team</p>
+        </div>
+        <div>
+            <h3>HOURS</h3>
+            <p>Mon – Fri: 9 am – 6 pm</p>
+            <p>Sat: 10 am – 4 pm</p>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>© 2023 Feast Fortress. All rights reserved.</p>
+    <p>Follow us on <a href="#" style="color: #f3763c;">Social Media</a></p>
+</footer>
+</body>
+</html>

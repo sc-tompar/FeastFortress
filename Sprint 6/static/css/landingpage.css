@@ -1,0 +1,59 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    font-size: 70px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+.logo-image {
+    max-width: 100px;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #f39c12;
+}
+
+.background-image {
+    background-image: url("https://wallpapers.com/images/hd/food-4k-1pf6px6ryqfjtnyr.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+}

@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+header a.logo {
+  font-size: 24px;
+  text-decoration: none;
+  color: #f3763c;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #f3763c;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url('https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg') no-repeat center/cover;
+  cursor: pointer;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-section .email {
+  color: #fff;
+  font-size: 12px;
+}
+
+.about-us {
+  text-align: center;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 185px;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.motto {
+  color: #ddd;
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); 
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  justify-items: center;
+  gap: 30px;
+  padding: 0 5%; 
+}
+
+.member {
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
+}
+
+.member-image-container {
+  width: 100%; 
+  height: 280px; 
+  overflow: hidden; 
+}
+
+.member-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  border-bottom: 5px solid #333; 
+}
+
+.member-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.member h3 {
+  color: #333;
+  margin: 10px 0;
+}
+
+.member-role {
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 0.5em; 
+}
+
+.member-bio {
+  color: #666;
+  font-size: 0.95rem;
+  height: auto;
+  overflow-y: auto;
+}
+
+.member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-top: auto; 
+  width: 100%;
+}

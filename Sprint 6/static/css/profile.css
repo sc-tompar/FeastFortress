@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url("https://wallpapers.com/images/hd/food-4k-1vrcb0mw76zcg4qf.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+header a.logo {
+    font-size: 24px;
+    text-decoration: none;
+    color: #f3763c;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #f3763c;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url('https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg') no-repeat center/cover;
+    cursor: pointer;
+}
+
+.main-box {
+    width: 500px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+}
+
+.image-box {
+    width: 220px;
+    height: 220px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 5px solid #f3763c;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.image-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details {
+    margin: 20px 0;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f3763c;
+    margin-bottom: 5px;
+}
+
+.email {
+    color: #fff;
+    font-size: 12px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.job {
+    font-size: 18px;
+    color: #888;
+}
+
+.logout {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #f44336;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.logout:hover {
+    background-color: #ff0000;
+}
+
+.customization-section {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.customization-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 20px;
+}
+
+.customization-section label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.customization-section select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+}
+
+.customization-section button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f3763c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.customization-section button:hover {
+    background-color: #e36532;
+}

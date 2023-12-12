@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feast Fortress</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" alt="logo">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/team.css' %}">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <a href="#" class="logo">Feast Fortress</a>
+        <nav>
+            <a href="/home/">Home</a>
+            <a href="/team/">Meet the Team</a>
+            <a href="#forum">Forum</a>
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        </nav>
+        <div class="profile-section">
+            <div class="email">{{ user.username }}</div>
+            <a href="/profile/" class="profile-icon"></a> 
+        </div>
+    </div>
+  </header> 
+    <div class="about-us">
+        <div class="background-image"></div>
+        <h1>Meet Our Team</h1>
+        <p class="motto">Our Motto: Feast Your Senses – Crafted by Foodies, For Foodies</p>
+        <div class="team-members">
+          <div class="member">
+            <div class="member-image-container">
+              <img src="{% static 'images/Tompar.jpg' %}" alt="Tompar" />
+            </div>
+            <div class="member-info">
+              <h3>Tompar, Simoun Cloyd</h3>
+              <p>Developer</p>
+              <p class="member-bio">BSIT - 3</p>
+            </div>
+          </div>
+          <div class="member">
+            <div class="member-image-container">
+              <img src="{% static 'images/Roble.jpg' %}" alt="Roble" />
+            </div>
+            <div class="member-info">
+              <h3>Roble, John Oscar</h3>
+              <p>Developer</p>
+              <p class="member-bio">BSIT - 3</p>
+            </div>
+          </div>
+          <div class="member">
+            <div class="member-image-container">
+              <img src="{% static 'images/Dador.jpg' %}" alt="Dador" />
+            </div>
+            <div class="member-info">
+              <h3>Dador, Brynt Julliann</h3>
+              <p>Developer</p>
+              <p class="member-bio">BSIT - 3</p>
+            </div>
+          </div>
+          <div class="member">
+            <div class="member-image-container">
+              <img src="{% static 'images/Masendo.jpg' %}" alt="Masendo" />
+            </div>
+            <div class="member-info">
+              <h3>Masendo, Davidlanz</h3>
+              <p>Developer</p>
+              <p class="member-bio">BSIT - 3</p>
+            </div>
+          </div>
+          <div class="member">
+            <div class="member-image-container">
+              <img src="{% static 'images/Villas.jpg' %}" alt="Villas" />
+            </div>
+            <div class="member-info">
+              <h3>Villas, Steve Laurenz</h3>
+              <p>Developer</p>
+              <p class="member-bio">BSIT - 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <footer>
+        <p>© 2023 Feast Fortress. All rights reserved.</p>
+        <p>Follow us on <a href="#" style="color: #f3763c;">Social Media</a></p>
+    </footer>
+</body>
+</html>
